@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEWB Lost Media Archive - Brown-Eyes White Boy</title>
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:title" content="LOST: Brown-Eyes White Boy - Austrian Cloud Rap (2018)">
+  <meta property="og:description" content="5 tracks from two EPs by 14-year-old Austrian cloud rapper Brown-Eyes White Boy are lost. The artist no longer has the files. Help us find them.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/kawhy-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LOST: Brown-Eyes White Boy - Austrian Cloud Rap (2018)">
+  <meta name="twitter:description" content="5 tracks from two EPs are lost forever unless someone saved them. Full lyrics preserved inside.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-2: #1a1a25;
+      --border: #2a2a3a;
+      --text: #e0e0e8;
+      --text-dim: #8888a0;
+      --accent: #ff4d6a;
+      --accent-glow: rgba(255, 77, 106, 0.15);
+      --found: #4ade80;
+      --found-dim: rgba(74, 222, 128, 0.1);
+      --lost: #ff4d6a;
+      --lost-glow: rgba(255, 77, 106, 0.08);
+      --gold: #fbbf24;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ---- HERO / WANTED POSTER ---- */
+    .hero {
+      position: relative;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 77, 106, 0.08) 0%, transparent 60%),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .wanted-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 1.5rem;
+      background: var(--accent-glow);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--text), var(--text-dim));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .stat-number.lost-num { color: var(--lost); }
+    .stat-number.found-num { color: var(--found); }
+    .stat-number.total-num { color: var(--gold); }
+
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+    }
+
+    .hero-quote {
+      font-style: italic;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      max-width: 500px;
+      margin: 0 auto;
+      border-left: 2px solid var(--accent);
+      padding-left: 1rem;
+      text-align: left;
+    }
+
+    /* ---- CONTAINER ---- */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---- SECTION ---- */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ---- ARTIST CARD ---- */
+    .artist-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .artist-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .artist-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .meta-item {
+      font-size: 0.85rem;
+    }
+
+    .meta-label {
+      color: var(--text-dim);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ---- ALBUM ---- */
+    .album {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .album-header {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .album-cover {
+      width: 160px;
+      height: 160px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .album-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .album-info .album-date {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .album-info .album-credits {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .album-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+    }
+
+    .status-partial {
+      background: rgba(251, 191, 36, 0.1);
+      color: var(--gold);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    /* ---- TRACKLIST ---- */
+    .tracklist {
+      border-top: 1px solid var(--border);
+    }
+
+    .track {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+      gap: 1rem;
+      transition: background 0.15s;
+    }
+
+    .track:last-child { border-bottom: none; }
+
+    .track:hover {
+      background: var(--surface-2);
+    }
+
+    .track-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      width: 2rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .track-title {
+      flex: 1;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .track-producer {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .track-status {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .track-found {
+      color: var(--found);
+      background: var(--found-dim);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+    }
+
+    .track-lost {
+      color: var(--lost);
+      background: var(--lost-glow);
+      border: 1px solid rgba(255, 77, 106, 0.25);
+      animation: pulse-lost 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-lost {
+      0%, 100% { border-color: rgba(255, 77, 106, 0.25); }
+      50% { border-color: rgba(255, 77, 106, 0.5); }
+    }
+
+    .track.is-lost {
+      background: var(--lost-glow);
+    }
+
+    /* ---- LOST TRACKS DETAIL ---- */
+    .lost-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .lost-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      overflow: hidden;
+    }
+
+    .lost-card-header {
+      padding: 1.25rem 1.5rem 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lost-card-header h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .lost-card-header .from-album {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      background: var(--surface-2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    .lost-card-meta {
+      padding: 0 1.5rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .lyrics-toggle {
+      display: block;
+      width: 100%;
+      padding: 0.6rem 1.5rem;
+      background: var(--surface-2);
+      border: none;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s;
+    }
+
+    .lyrics-toggle:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .lyrics-toggle::before {
+      content: '+ ';
+    }
+
+    .lyrics-toggle.open::before {
+      content: '- ';
+    }
+
+    .lyrics-content {
+      display: none;
+      padding: 1rem 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .lyrics-content.open {
+      display: block;
+    }
+
+    .lyrics-content pre {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: var(--text-dim);
+    }
+
+    .lyrics-content .lyric-section {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ---- SOURCES ---- */
+    .sources-list {
+      list-style: none;
+    }
+
+    .sources-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+      font-size: 0.85rem;
+    }
+
+    .sources-list li:last-child { border-bottom: none; }
+
+    .sources-list a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .sources-list a:hover {
+      text-decoration: underline;
+    }
+
+    .source-label {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ---- HELP BANNER ---- */
+    .help-banner {
+      background: linear-gradient(135deg, rgba(255, 77, 106, 0.08), rgba(251, 191, 36, 0.05));
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .help-banner h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .help-banner p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      max-width: 550px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .help-checklist {
+      list-style: none;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .help-checklist li {
+      padding: 0.4rem 0;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .help-checklist li::before {
+      content: '?  ';
+      color: var(--gold);
+    }
+
+    .share-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.8rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .share-btn:hover {
+      background: #e63d5c;
+      transform: translateY(-1px);
+    }
+
+    /* ---- TIMELINE ---- */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      transform: translateX(-4px);
+    }
+
+    .timeline-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-text {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 0.2rem;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 600px) {
+      .album-header { flex-direction: column; align-items: center; text-align: center; }
+      .album-cover { width: 200px; height: 200px; }
+      .track { flex-wrap: wrap; }
+      .track-producer { width: 100%; padding-left: 3rem; }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* ---- PRINT POSTER ---- */
+    @media print {
+      body { background: white; color: black; }
+      .hero { background: white; }
+      .lyrics-content, .lyrics-toggle { display: none !important; }
+      .album { break-inside: avoid; }
+      .lost-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="wanted-tag">Lost Media Search</div>
+  <h1><span>Brown-Eyes White Boy</span></h1>
+  <p class="hero-sub">Austrian Cloud Rap &middot; Salzburg, 2018 &middot; Lost to platform deletion</p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number lost-num">5</div>
+      <div class="stat-label">Tracks Lost</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number found-num">10</div>
+      <div class="stat-label">Tracks Survived</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number total-num">15</div>
+      <div class="stat-label">Total Tracks</div>
+    </div>
+  </div>
+
+  <div class="hero-quote">
+    "The artist confirmed in 2026 that he no longer has the audio files for the lost tracks.
+    SoundCloud deleted them and he had no backup."
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ==================== ARTIST ==================== -->
+<section>
+  <div class="section-title">The Artist</div>
+  <div class="artist-card">
+    <h2>Brown-Eyes White Boy</h2>
+    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">
+      Self-described "14yo austrian rapartist" from Salzburg. Released two EPs in early 2018
+      on SoundCloud and Bandcamp, both of which have since been deleted. 10 of 15 tracks survived
+      on the <strong>Archive (1619)</strong> compilation in 2020. The remaining 5 tracks exist only as
+      scraped lyrics &mdash; no known audio copies remain.
+    </p>
+    <div class="artist-meta">
+      <div class="meta-item">
+        <div class="meta-label">Location</div>
+        Salzburg, Austria
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Genre</div>
+        Austrian Cloud Rap
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Active</div>
+        2018
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Contact (2018)</div>
+        browneyeswhiteboy@gmail.com
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TIMELINE ==================== -->
+<section>
+  <div class="section-title">Timeline</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">February 27, 2018</div>
+      <div class="timeline-text"><strong>FULL ZIP</strong> EP released on SoundCloud and Bandcamp (5 tracks)</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">June 14, 2018</div>
+      <div class="timeline-text"><strong>KAWHY</strong> EP released on SoundCloud and Bandcamp (10 tracks)</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">November 27, 2018</div>
+      <div class="timeline-text">Bandcamp page captured by the Wayback Machine (last known snapshot)</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">~2019</div>
+      <div class="timeline-text">SoundCloud and Bandcamp pages deleted. Audio becomes inaccessible.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2020</div>
+      <div class="timeline-text">10 tracks re-released on <strong>Archive (1619)</strong> compilation. 5 tracks not included &mdash; presumed already lost.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2026</div>
+      <div class="timeline-text">Artist confirms he no longer has audio files. This archive is created to preserve what remains and search for copies.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FULL ZIP ==================== -->
+<section>
+  <div class="section-title">Discography</div>
+
+  <div class="album">
+    <div class="album-header">
+      <img src="img/fullzip-cover.jpg" alt="FULL ZIP cover art" class="album-cover">
+      <div class="album-info">
+        <h3>FULL ZIP</h3>
+        <div class="album-date">Released February 27, 2018</div>
+        <div class="album-credits">
+          Mix: @gunboi &middot; Master: @dieserninety<br>
+          Cover art: jsarts &amp; rbntellem<br>
+          Bandcamp Album ID: 853452325
+        </div>
+        <div class="album-status status-partial">1 of 5 tracks lost</div>
+      </div>
+    </div>
+    <div class="tracklist">
+      <div class="track is-lost">
+        <div class="track-num">01</div>
+        <div class="track-title">Lola Bunny</div>
+        <div class="track-producer">prod. Unknown</div>
+        <div class="track-status track-lost">LOST</div>
+      </div>
+      <div class="track">
+        <div class="track-num">02</div>
+        <div class="track-title">Cotton Candy</div>
+        <div class="track-producer">prod. QuayBandz</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">03</div>
+        <div class="track-title">Grape Gummy</div>
+        <div class="track-producer">prod. Unknown</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">04</div>
+        <div class="track-title">Mad Max</div>
+        <div class="track-producer">prod. Unknown</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">05</div>
+        <div class="track-title">Baby Milo</div>
+        <div class="track-producer">prod. Banbwoi</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== KAWHY ==================== -->
+  <div class="album">
+    <div class="album-header">
+      <img src="img/kawhy-cover.jpg" alt="KAWHY cover art" class="album-cover">
+      <div class="album-info">
+        <h3>KAWHY</h3>
+        <div class="album-date">Released June 14, 2018</div>
+        <div class="album-credits">
+          Mix/Master: @luxri4<br>
+          Bandcamp Album ID: 1387501607
+        </div>
+        <div class="album-status status-partial">4 of 10 tracks lost</div>
+      </div>
+    </div>
+    <div class="tracklist">
+      <div class="track">
+        <div class="track-num">01</div>
+        <div class="track-title">Polo sitzt</div>
+        <div class="track-producer">prod. Phil2k</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">02</div>
+        <div class="track-title">Kaktuseis</div>
+        <div class="track-producer">prod. Larkin Noir</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track is-lost">
+        <div class="track-num">03</div>
+        <div class="track-title">Hoodie gelb</div>
+        <div class="track-producer">prod. KIDDC</div>
+        <div class="track-status track-lost">LOST</div>
+      </div>
+      <div class="track">
+        <div class="track-num">04</div>
+        <div class="track-title">Funny Games</div>
+        <div class="track-producer">prod. Dee B</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">05</div>
+        <div class="track-title">Palina Rojinski</div>
+        <div class="track-producer">prod. Xtravulous</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track">
+        <div class="track-num">06</div>
+        <div class="track-title">Ghost Rare Shawty</div>
+        <div class="track-producer">prod. C Fre$hco</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+      <div class="track is-lost">
+        <div class="track-num">07</div>
+        <div class="track-title">ea7</div>
+        <div class="track-producer">prod. L I N C O L N</div>
+        <div class="track-status track-lost">LOST</div>
+      </div>
+      <div class="track is-lost">
+        <div class="track-num">08</div>
+        <div class="track-title">Demi Lovato</div>
+        <div class="track-producer">prod. RAGU</div>
+        <div class="track-status track-lost">LOST</div>
+      </div>
+      <div class="track is-lost">
+        <div class="track-num">09</div>
+        <div class="track-title">Moonrise Kingdom</div>
+        <div class="track-producer">prod. C Fre$hco</div>
+        <div class="track-status track-lost">LOST</div>
+      </div>
+      <div class="track">
+        <div class="track-num">10</div>
+        <div class="track-title">Kein Schritt nach hinten</div>
+        <div class="track-producer">prod. Lil Stack</div>
+        <div class="track-status track-found">Archive (1619)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOST TRACKS DETAIL ==================== -->
+<section>
+  <div class="section-title">Lost Tracks &mdash; Preserved Lyrics</div>
+  <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">
+    These 5 tracks have no known surviving audio. The lyrics below were scraped from
+    <a href="https://lyrics.lol/artist/678076-brown-eyes-white-boy" style="color: var(--accent);">lyrics.lol</a>
+    before that data was also at risk of disappearing. If you have audio files, screen recordings,
+    or any copy of these songs, please reach out.
+  </p>
+
+  <div class="lost-grid">
+
+    <!-- LOST 1: Lola Bunny -->
+    <div class="lost-card">
+      <div class="lost-card-header">
+        <h4>Lola Bunny</h4>
+        <span class="from-album">FULL ZIP &middot; Track 01</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: Unknown &middot; Mix: @gunboi &middot; Master: @dieserninety
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Hook]</span>
+Ihre Haare ro-ot
+Wir sitzen doch im selben Boo-oot
+Bin echt kein Retter in der No-ot
+Aber irgendwann sind wir to-ot
+Okay, uhh, ladi-da, die Haare rot so wie Chucky
+Ihr Gesicht voller Sterne, Augen glitzern wie Ed Hardy
+Okay, uhh, ladi-da, die Haare rot so wie Chucky
+Blaue Augen, blonde Haare, ja, ich nenn' sie Lola Bunny
+
+<span class="lyric-section">[Part]</span>
+Gelber Tracksuit passt zu ihren Sommersprossen
+Ich will mir alles kaufen, Junge, scheiß' auch auf die Kosten
+Will mit ihr weit, weit weg und das schon seit Wochen
+Generell weit, weit weg und das schon seit Wochen
+Mein Schuh passt zu ihr'n Nägeln
+Fick den Angler, hiss die Segel
+Scheiß auf Grenzen, scheiß auf Regeln
+Scheiß auf Grenzen, ich will Leben, uhh
+Das bleibt kleben, ihr könnt alle weiterreden
+Ich werd' weiter alles geben, ich mach' weiter, das auf jeden, okay?
+Eins-zwei, von unten komm' ich vorbei, okay
+Drei-vier, geht nicht gern vor die Tür, okay
+Fünf-sechs, er will Bandz, er will Racks, okay
+Sieben-acht, drück den Bass auf bis es kracht, okay
+Neun-zehn, ich bin jetzt vierzehn
+Hab' noch viel vor mir, werd' noch viel seh'n
+Und auch, wenn ich falle, ich bleib' nicht steh'n
+Ich will noch viel erreichen und das in diesem Leb'n
+
+<span class="lyric-section">[Pre-Hook]</span>
+Okay, uhh, ladi-da, die Haare rot so wie Claire
+Ich mach' immer nur Hits, nein, Bruder, das ist nicht Rap
+Okay, uhh, ladi-da, die Haare rot so wie Claire
+Im verdammten Tracksuit, Kombinieren, das nich' schwer
+Okay, oh, oh, oh, Mann, jetzt geht's ab, Bean in schwarz
+Oh, oh, oh, Mann, jetzt blendet Tony Stark
+Oh, oh, oh, steck' ihr 'ne Blume ins Haar, okay
+Oh, oh, oh, schreib' ihr ein'n scheiß Kommentar, ja
+
+<span class="lyric-section">[Hook]</span>
+Oh-oh
+Wir sitzen doch im selben Boo-oot
+Bin echt kein Retter in der No-ot
+Aber irgendwann sind wir to-ot
+Okay, uhh, ladi-da, die Haare rot so wie Chucky
+Ihr Gesicht voller Sterne, Augen glitzern wie Ed Hardy
+Okay, uhh, ladi-da, die Haare rot so wie Chucky
+Blaue Augen, blonde Haaren, ja, ich nenn' sie Lola Bunny
+
+<span class="lyric-section">[Outro]</span>
+Ja, ich nenn' sie Lola Bunny, okay, ja
+Ja, ich nenn' sie Lola Bunny, ey
+Ja, ich nenn' sie Lola Bunny, okay, ja
+Ja, ich nenn' sie Lola Bunny</pre>
+      </div>
+    </div>
+
+    <!-- LOST 2: Hoodie gelb -->
+    <div class="lost-card">
+      <div class="lost-card-header">
+        <h4>Hoodie gelb</h4>
+        <span class="from-album">KAWHY &middot; Track 03</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: KIDDC &middot; Mix/Master: @luxri4
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Intro]</span>
+KiddC on the beat
+
+<span class="lyric-section">[Hook]</span>
+Hoodie gelb, W-Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller (ich)
+Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
+Weg mit alten Erinnerungen, leb' nich' Gestern
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller
+Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
+Ich leb' heut und nicht Gestern
+
+<span class="lyric-section">[Part]</span>
+Ja, wird sowieso alles besser
+Irgendwann Scheine gelb, so wie Homer, ja
+Meinst, du findest mich scheiße, aber is' am Ende sowieso nich' wahr
+Okay, ja
+Niemand hat gelacht, du kleiner Komiker, ah
+Würd' gern wegrenn'n – Alyssa und James
+Loslassen tut doch sicher nich' weh
+Das glaub' ich zumindest, naja, is' schon okay
+Ich find' dich ganz cool, komm, begleit' mich auf mei'm Weg
+Okay, Bitch, werde schnell, so wie Lightning McQueen
+Braunauge auf mei'm Trikot, bin in mei'm eigenen Team
+Ey, ey, in mei'm eigenen Team
+Und ich, ja, ich bleib' in mei'm Team, ja
+Ich-Ich seh' aus wie Molly Ringwald 1985
+Bro-Bro, ich werd' nervös, schau' aus dem Fenster und ich mach' nichts
+Aber macht nichts
+Sonne scheint, Wetter fantastisch
+Bleib' in meiner Blase, alles hier aus Wolken oder Plastik
+
+<span class="lyric-section">[Hook]</span>
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller (ich)
+Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
+Weg mit alten Erinnerungen, leb' nich' Gestern
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller
+Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
+Ich leb' heut und nicht Gestern
+
+<span class="lyric-section">[Outro]</span>
+KiddC on the beat</pre>
+      </div>
+    </div>
+
+    <!-- LOST 3: ea7 -->
+    <div class="lost-card">
+      <div class="lost-card-header">
+        <h4>ea7</h4>
+        <span class="from-album">KAWHY &middot; Track 07</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: L I N C O L N &middot; Mix/Master: @luxri4
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Intro]</span>
+Ea7, ey, Ea7, ey
+Ea7, ey, Ea7, ey
+Ea7, ey, Ea7, ey, ja
+Ea7, ey, ja, ey
+
+<span class="lyric-section">[Hook]</span>
+Lass mal zusamm'n chill'n, ja, wir könn'n ja auch was essen, ey
+Wir ha'm kein'n Stress, es geht alles ohne Ketten, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey (Oh Linky Bitch)
+Ja, das find' ich auch, wir können ja auch was bestellen, ey
+Sammel weiter Münzen mit Magnet, bald dicke Ketten, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+
+<span class="lyric-section">[Part]</span>
+Ist niemals zu kalt für Turnschuhe
+Ich will nicht zu viel Geld zahlen und kaufe Zeug von Fubu, ey, ey
+Sag mir, Bro, was is' Futur?
+Laber mal lieber kein'n Scheiß, weil nicht so schlau wie Blues Clues
+Lauf' durch die Stadt, Ea7 auf den Schuhen
+Wir könn'n auch auf ein'n Berg, ich hab' sonst ja nichts zu tun, ey
+Lauf' durch die Stadt, Ea7 auf den Schuhen
+Aber mach sie halt nich' dreckig, Son, das fänd' ich nich' so cool, ja
+
+<span class="lyric-section">[Pre-Hook]</span>
+Hab' 'nen Adler überall (überall!)
+Mach' die Flügel hoch, das Überfall, ey (Überfall, ja)
+Hab' 'nen Adler überall (überall!)
+Mach' die Flügel hoch, das Überfall
+
+<span class="lyric-section">[Hook]</span>
+Lass mal zusamm'n chill'n, ja, wir könn'n ja auch was essen, ey
+Wir ha'm kein'n Stress, es geht alles ohne Ketten, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey (Oh Linky Bitch)
+Ja, das find' ich auch, wir können ja auch was bestellen, ey
+Sammel weiter Münzen mit Magnet, bald dicke Ketten, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+Ey, Ea7, ey
+
+<span class="lyric-section">[Outro]</span>
+Ey, ey
+Bald dicke Ketten
+Ey, ey
+Ea7, Ea7, ey</pre>
+      </div>
+    </div>
+
+    <!-- LOST 4: Demi Lovato -->
+    <div class="lost-card">
+      <div class="lost-card-header">
+        <h4>Demi Lovato</h4>
+        <span class="from-album">KAWHY &middot; Track 08</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: RAGU &middot; Mix/Master: @luxri4
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Intro]</span>
+Ultra Gang
+Ragu
+Schau'n wir mal, ey, ja
+Ja, tausend Grad, ey, ja
+Ja, tausend Grad
+Ey, ey, ey
+
+<span class="lyric-section">[Pre-Hook]</span>
+Sie fragen mich: &bdquo;Was willst du werden?&ldquo;
+Ich sag': &bdquo;Schau'n wir mal&ldquo;
+So viele Möglichkeiten, mein Kopf circa tausend Grad
+Sie fragen mich: &bdquo;Was willst du werden?&ldquo;
+Ich sag': &bdquo;Nerv mich nicht&ldquo;
+Ich will nur weg von hier, ja, wenn ich ehrlich bin
+
+<span class="lyric-section">[Hook]</span>
+Demi Lovato, easy wie Carlo
+Weg so wie Margo, nenn' mich Margo
+Ja, Trivago, weit weg, Trivago, ja, Trivago
+Ey, Demi Lovato
+Papier bunt so wie Pago, bin noch planlos, hab' kein'n Plan, Bro
+
+<span class="lyric-section">[Part]</span>
+Okay, kein Camp Rock, mach' Musik allein daheim
+Und so wird's auch bleiben, weil ich nur meine Zeit vertreib'
+Bräucht 'n Zimmer ohne Zeit, ey, ja, so wie [efa?]
+Bin eher leise wie ein Tesla
+Immer schneller, immer besser
+Okay, mh, überhol' dich, Bruder
+Mh, gib Acht wie Kobe, okay
+Mh, ich will nach oben Bruder, in die Wolken [?]
+Ja, ja, mh, geh' spazier'n und okay, mh, höre Remo Drive
+Fühl' mich wie so 'n Jugendlicher, denk nach über Liebe, weißt? Ey
+
+<span class="lyric-section">[Pre-Hook]</span>
+Sie fragen mich: &bdquo;Was willst du werden?&ldquo;
+Ich sag': &bdquo;Schau'n wir mal&ldquo;
+So viele Möglichkeiten, mein Kopf circa tausend Grad
+Sie fragen mich: &bdquo;Was willst du werden?&ldquo;
+Ich sag': &bdquo;Nerv mich nicht&ldquo;
+Ich will nur weg von hier, ja, wenn ich ehrlich bin
+
+<span class="lyric-section">[Hook]</span>
+Demi Lovato, easy wie Carlo
+Weg so wie Margo, nenn' mich Margo
+Ja, Trivago, weit weg, Trivago
+Ja, Trivago, ey, Demi Lovato
+Papier bunt so wie Pago
+Bin noch planlos, hab' kein'n Plan, Bro</pre>
+      </div>
+    </div>
+
+    <!-- LOST 5: Moonrise Kingdom -->
+    <div class="lost-card">
+      <div class="lost-card-header">
+        <h4>Moonrise Kingdom</h4>
+        <span class="from-album">KAWHY &middot; Track 09</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: C Fre$hco &middot; Mix/Master: @luxri4
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Hook]</span>
+Sam and Suzy, Moonrise Kingdom, Bitch, renn weg mit mir
+Du fragst mich, wo ich hin will, ich will einfach weg von hier
+Renn' mit dir, was dich bedrückt, ja, das vergessen wir
+Weg von hier, lauf draus los, will einfach weg von hier
+Sam and Suzy, Moonrise Kingdom, Bitch, renn weg mit mir
+Du fragst mich, wo ich hin will, ich will einfach weg von hier
+Renn' mit dir, was dich bedrückt, ja, das vergessen wir
+Weg von hier, lauf draus los, will einfach weg von hier
+
+<span class="lyric-section">[Part]</span>
+Big Bandz Gang, Bitch, meine Trap heißt Baggy Brody
+Ihr wollt die Formioli Sauce, Junge, Ravioli
+Steh' auf, schreibe Songs und ich esse Kelloggs, Brody
+Steh' auf, schreibe Songs und ich esse Kelloggs, Brody
+Baby Milo, lass die Affen aus'm Zoo
+Ich releas' Hit nach Hit nach Hit, das' einfach so und ich will
+Scheine Grün, Gelb, Lila, aha, so wie Fizzers, ey
+Das' der Soundtrack zu mei'm Film, nenn' mich [?], ey
+
+<span class="lyric-section">[Pre-Hook]</span>
+Sam and Suzy, Kim K, Kanye, alles, was du willst
+Nur wir zwei hier draußen, Bitch, und der Rest bleibt still
+Und der Rest bleibt still, ey, ey, ey
+
+<span class="lyric-section">[Hook]</span>
+Sam and Suzy, Moonrise Kingdom, Bitch, renn weg mit mir
+Du fragst mich, wo ich hin will, ich will einfach weg von hier
+Renn' mit dir, was dich bedrückt, ja, das vergessen wir
+Weg von hier, lauf draus los, will einfach weg von hier
+Sam and Suzy, Moonrise Kingdom, Bitch, renn weg mit mir
+Du fragst mich, wo ich hin will, ich will einfach weg von hier
+Renn' mit dir, was dich bedrückt, ja, das vergessen wir
+Weg von hier, lauf draus los, will einfach weg von hier</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== HOW TO HELP ==================== -->
+<section>
+  <div class="help-banner">
+    <h3>Can You Help Find These Tracks?</h3>
+    <p>
+      If you downloaded, screen-recorded, or saved any of these songs between February and November 2018,
+      the audio may still exist on your device. Here's what to look for:
+    </p>
+    <ul class="help-checklist">
+      <li>SoundCloud offline downloads or cache files from 2018</li>
+      <li>Bandcamp purchases or downloads (album ID: 853452325 or 1387501607)</li>
+      <li>Screen recordings or phone recordings of the tracks playing</li>
+      <li>YouTube reuploads, reaction videos, or playlists that included BEWB tracks</li>
+      <li>Old Discord messages, Telegram chats, or file shares with .mp3/.wav links</li>
+      <li>Cached files on old phones, laptops, or external drives</li>
+    </ul>
+    <button class="share-btn" onclick="shareArchive()">Share This Page</button>
+  </div>
+</section>
+
+<!-- ==================== SOURCES ==================== -->
+<section>
+  <div class="section-title">Sources &amp; Evidence</div>
+  <ul class="sources-list">
+    <li>
+      <span class="source-label">Wayback Machine &mdash; Bandcamp page (Nov 27, 2018)</span>
+      <a href="https://web.archive.org/web/20181127123138/https://browneyeswhiteboy.bandcamp.com/" target="_blank" rel="noopener">
+        web.archive.org/web/20181127123138/browneyeswhiteboy.bandcamp.com
+      </a>
+    </li>
+    <li>
+      <span class="source-label">SoundCloud &mdash; FULL ZIP playlist shell (empty)</span>
+      <a href="https://soundcloud.com/browneyeswhiteboy/sets/full-zip" target="_blank" rel="noopener">
+        soundcloud.com/browneyeswhiteboy/sets/full-zip
+      </a>
+    </li>
+    <li>
+      <span class="source-label">SoundCloud &mdash; KAWHY playlist shell (empty)</span>
+      <a href="https://soundcloud.com/browneyeswhiteboy/sets/kawhy" target="_blank" rel="noopener">
+        soundcloud.com/browneyeswhiteboy/sets/kawhy
+      </a>
+    </li>
+    <li>
+      <span class="source-label">Lyrics &mdash; lyrics.lol artist page</span>
+      <a href="https://lyrics.lol/artist/678076-brown-eyes-white-boy" target="_blank" rel="noopener">
+        lyrics.lol/artist/678076-brown-eyes-white-boy
+      </a>
+    </li>
+    <li>
+      <span class="source-label">Bandcamp Cover Art IDs</span>
+      FULL ZIP: art_id 2563709824 &middot; KAWHY: art_id 1015562254
+    </li>
+  </ul>
+</section>
+
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <p>
+    BEWB Lost Media Archive &middot; Preserving what remains of Brown-Eyes White Boy's 2018 discography<br>
+    If you have information, contact <a href="mailto:browneyeswhiteboy@gmail.com">browneyeswhiteboy@gmail.com</a><br><br>
+    Built with care. Music deserves to be remembered.
+  </p>
+</footer>
+
+<script>
+  function toggleLyrics(btn) {
+    const content = btn.nextElementSibling;
+    btn.classList.toggle('open');
+    content.classList.toggle('open');
+    btn.textContent = btn.classList.contains('open') ? 'Hide lyrics' : 'Show preserved lyrics';
+  }
+
+  async function shareArchive() {
+    const shareData = {
+      title: 'LOST: Brown-Eyes White Boy - Austrian Cloud Rap (2018)',
+      text: '5 tracks from two EPs by Austrian cloud rapper Brown-Eyes White Boy are lost. The artist no longer has the files. Help us find them.',
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (e) {
+        copyToClipboard();
+      }
+    } else {
+      copyToClipboard();
+    }
+  }
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.querySelector('.share-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Link copied!';
+      setTimeout(() => { btn.textContent = original; }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
