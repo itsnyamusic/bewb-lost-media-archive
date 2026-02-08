@@ -7,12 +7,12 @@
 
   <!-- Open Graph / Social sharing -->
   <meta property="og:title" content="LOST: Brown-Eyes White Boy - Austrian Cloud Rap (2018)">
-  <meta property="og:description" content="5 tracks from two EPs by 14-year-old Austrian cloud rapper Brown-Eyes White Boy are lost. The artist no longer has the files. Help us find them.">
+  <meta property="og:description" content="2 tracks from two EPs by 14-year-old Austrian cloud rapper Brown-Eyes White Boy are completely lost. 3 more exist only in degraded or alternate forms. Help us find the originals.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="img/kawhy-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LOST: Brown-Eyes White Boy - Austrian Cloud Rap (2018)">
-  <meta name="twitter:description" content="5 tracks from two EPs are lost forever unless someone saved them. Full lyrics preserved inside.">
+  <meta name="twitter:description" content="2 tracks completely lost, 3 more only in degraded form. Full lyrics preserved inside.">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;900&display=swap');
@@ -326,6 +326,16 @@
       background: var(--lost-glow);
     }
 
+    .track.is-partial {
+      background: rgba(251, 191, 36, 0.05);
+    }
+
+    .track-partial {
+      color: var(--gold);
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
     /* ---- LOST TRACKS DETAIL ---- */
     .lost-grid {
       display: grid;
@@ -339,6 +349,10 @@
       border-left: 3px solid var(--accent);
       border-radius: 0 8px 8px 0;
       overflow: hidden;
+    }
+
+    .partial-card {
+      border-left-color: var(--gold);
     }
 
     .lost-card-header {
@@ -606,12 +620,16 @@
 
   <div class="hero-stats">
     <div class="stat">
-      <div class="stat-number lost-num">5</div>
-      <div class="stat-label">Tracks Lost</div>
+      <div class="stat-number lost-num">2</div>
+      <div class="stat-label">Completely Lost</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" style="color: var(--gold);">3</div>
+      <div class="stat-label">Partial / Degraded</div>
     </div>
     <div class="stat">
       <div class="stat-number found-num">10</div>
-      <div class="stat-label">Tracks Survived</div>
+      <div class="stat-label">Fully Survived</div>
     </div>
     <div class="stat">
       <div class="stat-number total-num">15</div>
@@ -635,8 +653,9 @@
     <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">
       Self-described "14yo austrian rapartist" from Salzburg. Released two EPs in early 2018
       on SoundCloud and Bandcamp, both of which have since been deleted. 10 of 15 tracks survived
-      on the <strong>Archive (1619)</strong> compilation in 2020. The remaining 5 tracks exist only as
-      scraped lyrics &mdash; no known audio copies remain.
+      on the <strong>Archive (1619)</strong> compilation in 2020. Of the remaining 5, three have been
+      partially recovered (YouTube uploads, slowed+reverb edits), but 2 tracks &mdash; <strong>Lola Bunny</strong>
+      and <strong>ea7</strong> &mdash; remain completely lost with no known audio.
     </p>
     <div class="artist-meta">
       <div class="meta-item">
@@ -753,7 +772,7 @@
           Mix/Master: @luxri4<br>
           Bandcamp Album ID: 1387501607
         </div>
-        <div class="album-status status-partial">4 of 10 tracks lost</div>
+        <div class="album-status status-partial">1 lost, 3 partial, 6 survived</div>
       </div>
     </div>
     <div class="tracklist">
@@ -769,11 +788,11 @@
         <div class="track-producer">prod. Larkin Noir</div>
         <div class="track-status track-found">Archive (1619)</div>
       </div>
-      <div class="track is-lost">
+      <div class="track is-partial">
         <div class="track-num">03</div>
         <div class="track-title">Hoodie gelb</div>
         <div class="track-producer">prod. KIDDC</div>
-        <div class="track-status track-lost">LOST</div>
+        <div class="track-status track-partial">On Artist's YT</div>
       </div>
       <div class="track">
         <div class="track-num">04</div>
@@ -799,17 +818,17 @@
         <div class="track-producer">prod. L I N C O L N</div>
         <div class="track-status track-lost">LOST</div>
       </div>
-      <div class="track is-lost">
+      <div class="track is-partial">
         <div class="track-num">08</div>
         <div class="track-title">Demi Lovato</div>
         <div class="track-producer">prod. RAGU</div>
-        <div class="track-status track-lost">LOST</div>
+        <div class="track-status track-partial">Slowed+Reverb Only</div>
       </div>
-      <div class="track is-lost">
+      <div class="track is-partial">
         <div class="track-num">09</div>
         <div class="track-title">Moonrise Kingdom</div>
         <div class="track-producer">prod. C Fre$hco</div>
-        <div class="track-status track-lost">LOST</div>
+        <div class="track-status track-partial">Lyrics Upload (YT)</div>
       </div>
       <div class="track">
         <div class="track-num">10</div>
@@ -823,9 +842,9 @@
 
 <!-- ==================== LOST TRACKS DETAIL ==================== -->
 <section>
-  <div class="section-title">Lost Tracks &mdash; Preserved Lyrics</div>
+  <div class="section-title">Completely Lost Tracks &mdash; No Known Audio</div>
   <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">
-    These 5 tracks have no known surviving audio. The lyrics below were scraped from
+    These 2 tracks have no known surviving audio in any form. The lyrics below were scraped from
     <a href="https://lyrics.lol/artist/678076-brown-eyes-white-boy" style="color: var(--accent);">lyrics.lol</a>
     before that data was also at risk of disappearing. If you have audio files, screen recordings,
     or any copy of these songs, please reach out.
@@ -902,70 +921,7 @@ Ja, ich nenn' sie Lola Bunny</pre>
       </div>
     </div>
 
-    <!-- LOST 2: Hoodie gelb -->
-    <div class="lost-card">
-      <div class="lost-card-header">
-        <h4>Hoodie gelb</h4>
-        <span class="from-album">KAWHY &middot; Track 03</span>
-      </div>
-      <div class="lost-card-meta">
-        Producer: KIDDC &middot; Mix/Master: @luxri4
-      </div>
-      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
-      <div class="lyrics-content">
-        <pre><span class="lyric-section">[Intro]</span>
-KiddC on the beat
-
-<span class="lyric-section">[Hook]</span>
-Hoodie gelb, W-Wetter wird besser
-Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
-Okay, werde immer schneller (ich)
-Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
-Weg mit alten Erinnerungen, leb' nich' Gestern
-Hoodie gelb, Wetter wird besser
-Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
-Okay, werde immer schneller
-Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
-Ich leb' heut und nicht Gestern
-
-<span class="lyric-section">[Part]</span>
-Ja, wird sowieso alles besser
-Irgendwann Scheine gelb, so wie Homer, ja
-Meinst, du findest mich scheiße, aber is' am Ende sowieso nich' wahr
-Okay, ja
-Niemand hat gelacht, du kleiner Komiker, ah
-Würd' gern wegrenn'n – Alyssa und James
-Loslassen tut doch sicher nich' weh
-Das glaub' ich zumindest, naja, is' schon okay
-Ich find' dich ganz cool, komm, begleit' mich auf mei'm Weg
-Okay, Bitch, werde schnell, so wie Lightning McQueen
-Braunauge auf mei'm Trikot, bin in mei'm eigenen Team
-Ey, ey, in mei'm eigenen Team
-Und ich, ja, ich bleib' in mei'm Team, ja
-Ich-Ich seh' aus wie Molly Ringwald 1985
-Bro-Bro, ich werd' nervös, schau' aus dem Fenster und ich mach' nichts
-Aber macht nichts
-Sonne scheint, Wetter fantastisch
-Bleib' in meiner Blase, alles hier aus Wolken oder Plastik
-
-<span class="lyric-section">[Hook]</span>
-Hoodie gelb, Wetter wird besser
-Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
-Okay, werde immer schneller (ich)
-Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
-Weg mit alten Erinnerungen, leb' nich' Gestern
-Hoodie gelb, Wetter wird besser
-Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
-Okay, werde immer schneller
-Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
-Ich leb' heut und nicht Gestern
-
-<span class="lyric-section">[Outro]</span>
-KiddC on the beat</pre>
-      </div>
-    </div>
-
-    <!-- LOST 3: ea7 -->
+    <!-- LOST 2: ea7 -->
     <div class="lost-card">
       <div class="lost-card-header">
         <h4>ea7</h4>
@@ -1034,14 +990,93 @@ Ea7, Ea7, ey</pre>
       </div>
     </div>
 
-    <!-- LOST 4: Demi Lovato -->
-    <div class="lost-card">
+  </div>
+</section>
+
+<!-- ==================== PARTIAL FINDS ==================== -->
+<section>
+  <div class="section-title">Partial Finds &mdash; Audio Exists in Degraded or Alternate Form</div>
+  <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">
+    These 3 tracks have been located, but not in their original release quality.
+    The original SoundCloud/Bandcamp masters remain missing. If you have the original
+    HQ audio, please reach out.
+  </p>
+
+  <div class="lost-grid">
+
+    <!-- PARTIAL 1: Hoodie gelb -->
+    <div class="lost-card partial-card">
+      <div class="lost-card-header">
+        <h4>Hoodie gelb</h4>
+        <span class="from-album">KAWHY &middot; Track 03</span>
+      </div>
+      <div class="lost-card-meta">
+        Producer: KIDDC &middot; Mix/Master: @luxri4<br>
+        <strong style="color: var(--gold);">Found:</strong> Available on the artist's own YouTube channel. Original SoundCloud/Bandcamp release still missing.
+      </div>
+      <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
+      <div class="lyrics-content">
+        <pre><span class="lyric-section">[Intro]</span>
+KiddC on the beat
+
+<span class="lyric-section">[Hook]</span>
+Hoodie gelb, W-Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller (ich)
+Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
+Weg mit alten Erinnerungen, leb' nich' Gestern
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller
+Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
+Ich leb' heut und nicht Gestern
+
+<span class="lyric-section">[Part]</span>
+Ja, wird sowieso alles besser
+Irgendwann Scheine gelb, so wie Homer, ja
+Meinst, du findest mich scheiße, aber is' am Ende sowieso nich' wahr
+Okay, ja
+Niemand hat gelacht, du kleiner Komiker, ah
+Würd' gern wegrenn'n – Alyssa und James
+Loslassen tut doch sicher nich' weh
+Das glaub' ich zumindest, naja, is' schon okay
+Ich find' dich ganz cool, komm, begleit' mich auf mei'm Weg
+Okay, Bitch, werde schnell, so wie Lightning McQueen
+Braunauge auf mei'm Trikot, bin in mei'm eigenen Team
+Ey, ey, in mei'm eigenen Team
+Und ich, ja, ich bleib' in mei'm Team, ja
+Ich-Ich seh' aus wie Molly Ringwald 1985
+Bro-Bro, ich werd' nervös, schau' aus dem Fenster und ich mach' nichts
+Aber macht nichts
+Sonne scheint, Wetter fantastisch
+Bleib' in meiner Blase, alles hier aus Wolken oder Plastik
+
+<span class="lyric-section">[Hook]</span>
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller (ich)
+Drück' aufs Gas drauf, es wird laut, scheiß auf Tesla (Tesla)
+Weg mit alten Erinnerungen, leb' nich' Gestern
+Hoodie gelb, Wetter wird besser
+Ich brauch' gute Laune jetzt und zwar massig wie Brock Lesnar
+Okay, werde immer schneller
+Drück' aufs Gas drauf, es wird laut, Junge, scheiß auf Tesla
+Ich leb' heut und nicht Gestern
+
+<span class="lyric-section">[Outro]</span>
+KiddC on the beat</pre>
+      </div>
+    </div>
+
+    <!-- PARTIAL 2: Demi Lovato -->
+    <div class="lost-card partial-card">
       <div class="lost-card-header">
         <h4>Demi Lovato</h4>
         <span class="from-album">KAWHY &middot; Track 08</span>
       </div>
       <div class="lost-card-meta">
-        Producer: RAGU &middot; Mix/Master: @luxri4
+        Producer: RAGU &middot; Mix/Master: @luxri4<br>
+        <strong style="color: var(--gold);">Found (degraded):</strong> Only known to exist in a slowed + reverb edit. No original-speed version has been located.
       </div>
       <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
       <div class="lyrics-content">
@@ -1098,14 +1133,15 @@ Bin noch planlos, hab' kein'n Plan, Bro</pre>
       </div>
     </div>
 
-    <!-- LOST 5: Moonrise Kingdom -->
-    <div class="lost-card">
+    <!-- PARTIAL 3: Moonrise Kingdom -->
+    <div class="lost-card partial-card">
       <div class="lost-card-header">
         <h4>Moonrise Kingdom</h4>
         <span class="from-album">KAWHY &middot; Track 09</span>
       </div>
       <div class="lost-card-meta">
-        Producer: C Fre$hco &middot; Mix/Master: @luxri4
+        Producer: C Fre$hco &middot; Mix/Master: @luxri4<br>
+        <strong style="color: var(--gold);">Found (lyrics video):</strong> A lyrics upload exists on YouTube. Original audio source quality unknown.
       </div>
       <button class="lyrics-toggle" onclick="toggleLyrics(this)">Show preserved lyrics</button>
       <div class="lyrics-content">
@@ -1152,10 +1188,10 @@ Weg von hier, lauf draus los, will einfach weg von hier</pre>
 <!-- ==================== HOW TO HELP ==================== -->
 <section>
   <div class="help-banner">
-    <h3>Can You Help Find These Tracks?</h3>
+    <h3>Can You Help Find the Originals?</h3>
     <p>
-      If you downloaded, screen-recorded, or saved any of these songs between February and November 2018,
-      the audio may still exist on your device. Here's what to look for:
+      2 tracks are completely lost. 3 more exist only in degraded or alternate forms (YouTube uploads, slowed+reverb edits).
+      If you downloaded or saved any of these songs in original quality between February and November 2018, please reach out:
     </p>
     <ul class="help-checklist">
       <li>SoundCloud offline downloads or cache files from 2018</li>
